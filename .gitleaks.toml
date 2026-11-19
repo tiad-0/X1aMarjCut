@@ -1,0 +1,18 @@
+# 1.2.52 secret scanning (CI job "Secrets", docs/SECURITY_AUDIT.md). Extends gitleaks' default rules.
+title = "SharkyClips gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Reviewed false positives"
+paths = [
+  '''^frontend/dist/''',          # minified build output (the sources in frontend/src are scanned)
+  '''^frontend/node_modules/''',
+  '''^\.venv/''',
+]
+regexes = [
+  '''kimne78kx3ncx6brgo4mv6wki5h1ko''',   # Twitch's public web client id (sent by every twitch.tv page)
+  '''[0-9a-f]{64}''',                     # SHA-256 checksums of model downloads
+  '''FAKE[A-Za-z0-9_\-]*''',               # test placeholders
+]

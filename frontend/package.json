@@ -1,0 +1,24 @@
+{
+  "name": "marjcut-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/sync-splash.mjs && tsc -b && vite build",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "@vitejs/plugin-react": "4.3.4",
+    "axe-core": "^4.10.3",
+    "playwright": "1.55.1",
+    "typescript": "5.6.3",
+    "vite": "6.4.6"
+  }
+}

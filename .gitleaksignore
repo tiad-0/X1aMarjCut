@@ -1,0 +1,13 @@
+# 1.2.52: reviewed gitleaks findings in old commits (docs/SECURITY_AUDIT.md, finding S-01 / S-02).
+# S-01: the old built-in Google OAuth client (removed in 1.2.52; its secret must be rotated).
+53bbe910c9bc98086251917b6dc133a7ba0e1696:backend/sharkyclips/google_client.json:generic-api-key:4
+# S-02: i18n strings like "Enable the YouTube API" (not secrets).
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/zh.ts:generic-api-key:1366
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/ru.ts:generic-api-key:1429
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/ar.ts:generic-api-key:1367
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/de.ts:generic-api-key:1407
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/en.ts:generic-api-key:1409
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/en.ts:generic-api-key:1415
+68674311919e09853512a61d778d296047d8848a:frontend/src/i18n/locales/en.ts:generic-api-key:1418
+# S-02: the public jwt.io sample token used by the redaction test (not a secret).
+0ef7643bd08a2065e2bf8cdf68d71c4c13c0334f:backend/tests/test_security.py:jwt:299

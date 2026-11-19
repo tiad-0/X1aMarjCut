@@ -1,0 +1,50 @@
+# SharkyClips working data (videos, audio, transcripts)
+workspace/*
+!workspace/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Partial downloads
+*.part
+*.ytdl
+
+# Models and personal config (never commit)
+models/
+*.gguf
+*.safetensors
+*.pt
+*.ckpt
+*.onnx
+.sharkyclips/
+config.local.json
+.env
+.env.*
+
+# Installer state, release build output, capture temp files
+.install-state.json
+installer/dist/
+docs/.video/
+.coverage
+
+# 1.2.52: Google OAuth clients and other secrets live only in ~/.sharkyclips, never in the repo
+backend/sharkyclips/google_client.json
+google_client.json
+client_secret*.json
+*.enc
+api_token
