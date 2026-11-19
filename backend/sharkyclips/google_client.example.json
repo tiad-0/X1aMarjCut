@@ -1,0 +1,8 @@
+{
+  "_comment": "Example only: SharkyClips never ships a Google client. To use your own Google project for the one-click 'Connect with Google', create an OAuth client of type 'Desktop app' in Google Cloud (Google Auth Platform > Clients), copy client_id / client_secret / project_id here and save the file as google_client.json in your SETTINGS folder (Windows: %USERPROFILE%/.sharkyclips, macOS/Linux: ~/.sharkyclips), never in the repo. Then Settings > YouTube > Reload Google client. Easier: Settings > YouTube > Connect your own Google project (the guided setup does the same). verification: testing | production | in_review | verified. user_cap: Google's limit for unverified apps.",
+  "client_id": "YOUR-CLIENT-ID.apps.googleusercontent.com",
+  "client_secret": "YOUR-CLIENT-SECRET",
+  "project_id": "your-project-id",
+  "verification": "testing",
+  "user_cap": 100
+}
