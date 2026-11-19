@@ -16,7 +16,7 @@ looks at the same consent screen and site.
 |---|---|
 | Organization / developer | `<your full name>`, individual developer, open-source project |
 | Contact email | `<your email>` |
-| API client / product name | SharkyClips |
+| API client / product name | MarjCut |
 | Google Cloud project number | `<number: Cloud Console → Dashboard → Project info>` |
 | Project ID | `sharkyclips` |
 | Website | https://utkualsir.github.io/sharkyclips-site/ |

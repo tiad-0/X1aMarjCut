@@ -1,6 +1,6 @@
 {
-  "name": "SharkyClips – approve clips",
-  "short_name": "SharkyClips",
+  "name": "MarjCut – approve clips",
+  "short_name": "MarjCut",
   "description": "Swipe your ready clips: right to upload, left to skip.",
   "start_url": "/#/approve",
   "scope": "/",

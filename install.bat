@@ -1,6 +1,6 @@
 @echo off
-rem SharkyClips setup for Windows 10/11: double-click this file.
-rem Kurulum: bu dosyaya cift tiklayin.
+rem 
+rem 
 setlocal
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0installer\windows\install.ps1" %*
 set "RC=%ERRORLEVEL%"

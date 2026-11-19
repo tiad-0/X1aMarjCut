@@ -218,10 +218,10 @@ else
   desk="${SHORTCUT_DIR:-$HOME/Desktop}"
   apps="${SHORTCUT_DIR:-$HOME/Applications}"
   mkdir -p "$desk" "$apps"
-  printf '#!/bin/bash\n# SharkyClips: opens in your browser. Close this window to stop SharkyClips.\nexec "%s"\n' "$LAUNCHER" > "$desk/SharkyClips.command"
-  chmod +x "$desk/SharkyClips.command"
-  ok "$desk/SharkyClips.command"
-  app="$apps/SharkyClips.app"
+  printf '#!/bin/bash\n# SharkyClips: opens in your browser. Close this window to stop SharkyClips.\nexec "%s"\n' "$LAUNCHER" > "$desk/MarjCut.command"
+  chmod +x "$desk/MarjCut.command"
+  ok "$desk/MarjCut.command"
+  app="$apps/MarjCut.app"
   rm -rf "$app"
   mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources"
   cp "$APP_DIR/assets/icon/sharkyclips.icns" "$app/Contents/Resources/sharkyclips.icns"
@@ -229,20 +229,20 @@ else
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-  <key>CFBundleName</key><string>SharkyClips</string>
-  <key>CFBundleDisplayName</key><string>SharkyClips</string>
-  <key>CFBundleIdentifier</key><string>io.github.utkualsir.sharkyclips</string>
+  <key>CFBundleName</key><string>MarjCut</string>
+  <key>CFBundleDisplayName</key><string>MarjCut</string>
+  <key>CFBundleIdentifier</key><string>io.github.tiad-0.X1aMarjCut</string>
   <key>CFBundleVersion</key><string>${VERSION}</string>
   <key>CFBundleShortVersionString</key><string>${VERSION}</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleExecutable</key><string>SharkyClips</string>
-  <key>CFBundleIconFile</key><string>sharkyclips</string>
+  <key>CFBundleExecutable</key><string>MarjCut</string>
+  <key>CFBundleIconFile</key><string>MarjCut</string>
   <key>LSMinimumSystemVersion</key><string>13.0</string>
 </dict></plist>
 PLIST
   # The app opens the launcher in Terminal (the window keeps the server running).
-  printf '#!/bin/bash\nopen -a Terminal "%s"\n' "$LAUNCHER" > "$app/Contents/MacOS/SharkyClips"
-  chmod +x "$app/Contents/MacOS/SharkyClips"
+  printf '#!/bin/bash\nopen -a Terminal "%s"\n' "$LAUNCHER" > "$app/Contents/MacOS/MarjCut"
+  chmod +x "$app/Contents/MacOS/MarjCut"
   touch "$app"
   ok "$app"
 fi
