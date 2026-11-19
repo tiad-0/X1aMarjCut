@@ -1,6 +1,6 @@
-"""Notification-area (tray) icon for SharkyClips started without a console window.
+"""Notification-area (tray) icon for MarjCut started without a console window.
 
-Menu: Open SharkyClips (also a left click), the performance mode, Quit SharkyClips.
+Menu: Open MarjCut (also a left click), the performance mode, Quit MarjCut.
 Needs `pystray` (Windows; optional elsewhere). Everything else talks to the running server
 over its HTTP API, so the icon costs nothing while it sits there.
 """
@@ -18,10 +18,10 @@ from typing import Callable
 from . import config
 
 TEXT = {
-    "tr": {"open": "SharkyClips'i aç", "quit": "SharkyClips'i kapat", "mode": "Performans",
-           "silent": "Sessiz", "balanced": "Dengeli", "turbo": "Turbo", "tip": "SharkyClips çalışıyor"},
-    "en": {"open": "Open SharkyClips", "quit": "Quit SharkyClips", "mode": "Performance",
-           "silent": "Silent", "balanced": "Balanced", "turbo": "Turbo", "tip": "SharkyClips is running"},
+    "tr": {"open": "MarjCut'i aç", "quit": "MarjCut'i kapat", "mode": "Performans",
+           "silent": "Sessiz", "balanced": "Dengeli", "turbo": "Turbo", "tip": "MarjCut çalışıyor"},
+    "en": {"open": "Open MarjCut", "quit": "Quit MarjCut", "mode": "Performance",
+           "silent": "Silent", "balanced": "Balanced", "turbo": "Turbo", "tip": "MarjCut is running"},
 }
 
 
@@ -42,7 +42,7 @@ def _t(key: str) -> str:
 def _icon_image():
     from PIL import Image
 
-    path = Path(__file__).resolve().parents[2] / "assets" / "icon" / "sharkyclips.png"
+    path = Path(__file__).resolve().parents[2] / "assets" / "icon" / "MarjCut.png"
     try:
         return Image.open(path).convert("RGBA").resize((64, 64))
     except OSError:
@@ -105,7 +105,7 @@ def run(url: str, on_quit: Callable[[], None], stopped: threading.Event) -> None
         pystray.Menu.SEPARATOR,
         pystray.MenuItem(_t("quit"), quit_app),
     )
-    icon = pystray.Icon("SharkyClips", _icon_image(), f"{_t('tip')}: {url}", menu)
+    icon = pystray.Icon("MarjCut", _icon_image(), f"{_t('tip')}: {url}", menu)
 
     def watch() -> None:  # the server ended on its own (crash, update failure): remove the icon
         stopped.wait()
@@ -134,6 +134,6 @@ def notify_loop(url: str, icon, stopped: threading.Event, every: float = 5.0) ->
         for n in data.get("items") or []:
             seen["last"] = max(seen["last"], int(n.get("id") or 0))
             try:
-                icon.notify(str(n.get("body") or ""), str(n.get("title") or "SharkyClips"))
+                icon.notify(str(n.get("body") or ""), str(n.get("title") or "MarjCut"))
             except Exception:  # noqa: BLE001 - notifications unsupported here
                 pass
