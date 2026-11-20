@@ -1,3 +1,4 @@
+
 """Supported languages registry, shared by the whole app (UI, transcription, outputs)."""
 
 from __future__ import annotations
@@ -29,6 +30,7 @@ _ALL = [
     Language("de", "Deutsch", "German", False, "de"),
     Language("ar", "العربية", "Arabic", True, "ar"),
     Language("zh", "中文", "Chinese", False, "zh"),
+    Language("fr", "Français", "French", False, "fr"),
 ]
 
 LANGUAGES: dict[str, Language] = {lang.code: lang for lang in _ALL}
@@ -48,6 +50,9 @@ def get(code: str | None) -> Language | None:
 
 
 def require(code: str) -> Language:
+    if code == AUTO:
+        return None
+
     lang = get(code)
     if lang is None:
         raise SharkyClipsError(
